@@ -1,6 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <data>
+
+        <variable
+            name="calcViewModel"
+            type="calcmvvm.k.calculator.viewModels.CalcViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="end|bottom"
+            android:text='@{calcViewModel.updateTheViewLine}'
+            android:textSize="45sp" />
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1,2,3">
+
+            <TableRow>
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('/')}"
+                    android:text="@string/divsion" />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('*')}"
+                    android:text="@string/muliplication" />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('-')}"
+                    android:text="@string/minus"
+
+                    />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('+')}"
+                    android:text="@string/plus" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('7')}"
+                    android:text="@string/_7" />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('8')}"
+                    android:text="@string/_8" />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('9')}"
+                    android:text="@string/_9" />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickBack()}"
+                    android:text="@string/back" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('4')}"
+                    android:text="@string/_4" />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('5')}"
+                    android:text="@string/_5" />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('6')}"
+                    android:text="@string/_6" />
+
+                <Button android:text="@string/ac" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('1')}"
+                    android:text="@string/_1" />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('2')}"
+                    android:text="@string/_2" />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('3')}"
+                    android:text="@string/_3" />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('.')}"
+                    android:text="@string/dot" />
+
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('0')}"
+                    android:text="@string/_0" />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc('(')}"
+                    android:text="@string/left_parenthesis" />
+
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickCalc(')')}"
+                    android:text="@string/right_parenthesis" />
+
+                <Button android:text="@string/ItIs" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</layout>
