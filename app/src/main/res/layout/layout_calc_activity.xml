@@ -32,16 +32,17 @@
 
                 <Button
                     android:onClick="@{()->calcViewModel.onClickCalc('/')}"
-                    android:text="@string/divsion" />
+                    android:text="@string/division"
+                    />
 
                 <Button
                     android:onClick="@{()->calcViewModel.onClickCalc('*')}"
-                    android:text="@string/muliplication" />
+                    android:text="@string/multiplication"
+                    />
 
                 <Button
                     android:onClick="@{()->calcViewModel.onClickCalc('-')}"
                     android:text="@string/minus"
-
                     />
 
                 <Button
@@ -82,7 +83,9 @@
                     android:onClick="@{()->calcViewModel.onClickCalc('6')}"
                     android:text="@string/_6" />
 
-                <Button android:text="@string/ac" />
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickAC()}"
+                    android:text="@string/ac" />
             </TableRow>
 
             <TableRow>

@@ -14,41 +14,53 @@ import calcmvvm.k.calculator.model.SupportedOperation;
 
 public class CalcViewModel extends ViewModel {
 
-    String temporaryString;
-
     public ObservableField<String> updateTheViewLine;
 
     public ObservableField<String> getUpdateTheViewLine() {
         return updateTheViewLine;
     }
 
-
     private SupportedOperation supportedOperation;
 
-    public void init(){
+    public void init() {
         supportedOperation = new SupportedOperation();
-        updateTheViewLine = new ObservableField<String>();
+        updateTheViewLine = new ObservableField<>();
     }
 
     public CalcViewModel() {
-        updateTheViewLine = new ObservableField<String>();
+        updateTheViewLine = new ObservableField<>();
     }
 
-    public void onClickCalc(char symbol){
-        if(updateTheViewLine.get()!=null)
-            updateTheViewLine.set(updateTheViewLine.get()+String.valueOf(symbol));
-        else{
+    public void onClickCalc(char symbol) {
+        if (updateTheViewLine.get() != null)
+            updateTheViewLine.set(updateTheViewLine.get() + String.valueOf(symbol));
+        else {
             updateTheViewLine.set(String.valueOf(symbol));
         }
     }
 
-    public void onClickBack(){
-        if(updateTheViewLine.get()!=null)
-           temporaryString = updateTheViewLine.get();
-        temporaryString = temporaryString.replace(temporaryString.substring(temporaryString.length()-1),"");
+
+    public void onClickBack() {
+        if (updateTheViewLine.get() != null) {
+            String temporaryString = updateTheViewLine.get();
+            if (temporaryString.length() > 0)
+                temporaryString = updateTheViewLine.get().substring(0, updateTheViewLine.get().length() - 1);
+
             updateTheViewLine.set(temporaryString);
+            temporaryString = "";
         }
     }
+
+    public void onClickAC() {
+        updateTheViewLine.set("");
+    }
+
+
+    
+
+
+
+}
 
 
 
