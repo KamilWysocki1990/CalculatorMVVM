@@ -123,7 +123,9 @@
                     android:onClick="@{()->calcViewModel.onClickCalc(')')}"
                     android:text="@string/right_parenthesis" />
 
-                <Button android:text="@string/ItIs" />
+                <Button
+                    android:onClick="@{()->calcViewModel.onClickGetResult()}"
+                    android:text="@string/ItIs" />
             </TableRow>
         </TableLayout>
     </LinearLayout>

@@ -55,8 +55,10 @@ public class CalcViewModel extends ViewModel {
         updateTheViewLine.set("");
     }
 
+    public void onClickGetResult(){
+        updateTheViewLine.set(supportedOperation.makeCalculation(updateTheViewLine.get()));
+    }
 
-    
 
 
 
